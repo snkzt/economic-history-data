@@ -1,8 +1,6 @@
 # economic-history-data
-
-# Noughts and Crosses
-Simple "noughts and crosses" game for two players.
-Start from here.
+A web page to show how world's ecoomy shits with charts.
+Users can choose years to see changes in population, GDP and domestic private credit to GDP.
 
 ## Description
 ### How to Use
