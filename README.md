@@ -13,5 +13,3 @@ HTML, CSS, Java Script
 
 ### Author
 Saki Nakazato
-
-![How this page looks like]
