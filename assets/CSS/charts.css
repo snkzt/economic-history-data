@@ -11,22 +11,41 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.dropdown {
-  font-size: large;
-  width: 130px;
-  padding: 10px;
-  position: absolute;
-  top: 0px;
-  left: 30%;
+.navigation {
+  padding: 1px;
+  background-color: #1c2041;
 }
 
-.dropdown1 {
+#atitle {
+  display: block;
+  width: 170px;
+  margin-right: 100px;
+  text-align: center;
+  line-height: 21px;
+  font-family: 'Bradley Hand', cursive;
+  font-style: italic;
+  font-size: 14pt;
+  color: white;
+  background-color: rgb(133, 133, 132);
+}
+
+.nav-link {
+  display: block;
+  margin-top: 10px;
+  margin-right: 276px;
+  color:white;
   font-size: large;
-  width: 130px;
-  padding: 10px;
+}
+
+#dropdownMenu2 {
+  font-size: large;
   position: absolute;
+  margin-top:10px;
+  margin-right: 100px;
   top: 0px;
-  left: 60%;
+  left: 58.5%;
+  background-color: #1c2041;
+  border-color: #1c2041;
 }
 
 .main {
@@ -34,17 +53,19 @@
   margin: 0 auto;
 }
 
-.concept-movie {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  margin-top: 80px;
+#chart {
+  width: 950px;
+  margin: 10% auto;
+}
+
+#series_chart_div {
+  width: 900px;
+  height: 500px;
 }
 
 .title-call {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-  margin-top: 50%;
   font-size: 30pt;
   text-align: center;
 }

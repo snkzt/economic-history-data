@@ -3,6 +3,44 @@ let datasetDomesticCredit = [];
 let datasetPopulation = [];
 let year;
 let byYearBraGdp;
+let byYearChnGdp;
+let byYearCypGdp;
+let byYearDeuGdp;
+let byYearGbrGdp;
+let byYearHkgGdp;
+let byYearIndGdp;
+let byYearJpnGdp;
+let byYearRusGdp;
+let byYearSgpGdp;
+let byYearThaGdp;
+let byYearUsaGdp;
+let byYearZafGdp;
+let byYearBraDc;
+let byYearChnDc;
+let byYearCypDc;
+let byYearDeuDc;
+let byYearGbrDc;
+let byYearHkgDc;
+let byYearIndDc;
+let byYearJpnDc;
+let byYearRusDc;
+let byYearSgpDc;
+let byYearThaDc;
+let byYearUsaDc;
+let byYearZafDc;
+let byYearBraPl;
+let byYearChnPl;
+let byYearCypPl;
+let byYearDeuPl;
+let byYearGbrPl;
+let byYearHkgPl;
+let byYearIndPl;
+let byYearJpnPl;
+let byYearRusPl;
+let byYearSgpPl;
+let byYearThaPl;
+let byYearUsaPl;
+let byYearZafPl;
   
 let yearSelector = document.getElementsByClassName('dropdown-item2');
 for (let i = 0; i < yearSelector.length; i++) {
@@ -14,6 +52,7 @@ function selectedYear (event) {
   expGDP();
   expDc();
   expPl();
+  dataOnClick();
 }
 
 function filterByCountryCode (item, code) {
@@ -90,55 +129,53 @@ async function expGDP() {
     return item.value;
   });
 
-  let byYearChnGdp = byCountryChnDcGdp.filter(filterByYear).map(item => {
+  byYearChnGdp = byCountryChnDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearCypGdp = byCountryCypDcGdp.filter(filterByYear).map(item => {
+  byYearCypGdp = byCountryCypDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearDeuGdp = byCountryDeuDcGdp.filter(filterByYear).map(item => {
+  byYearDeuGdp = byCountryDeuDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearGbrGdp = byCountryGbrDcGdp.filter(filterByYear).map(item => {
+  byYearGbrGdp = byCountryGbrDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearHkgGdp = byCountryHkgDcGdp.filter(filterByYear).map(item => {
+  byYearHkgGdp = byCountryHkgDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearIndGdp = byCountryIndDcGdp.filter(filterByYear).map(item => {
+  byYearIndGdp = byCountryIndDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearJpnGdp = byCountryJpnDcGdp.filter(filterByYear).map(item => {
+  byYearJpnGdp = byCountryJpnDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearRusGdp = byCountryRusDcGdp.filter(filterByYear).map(item => {
+  byYearRusGdp = byCountryRusDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearSgpGdp = byCountrySgpDcGdp.filter(filterByYear).map(item => {
+  byYearSgpGdp = byCountrySgpDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearThaGdp = byCountryThaDcGdp.filter(filterByYear).map(item => {
+  byYearThaGdp = byCountryThaDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearUsaGdp = byCountryUsaDcGdp.filter(filterByYear).map(item => {
+  byYearUsaGdp = byCountryUsaDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearZafGdp = byCountryZafDcGdp.filter(filterByYear).map(item => {
+  byYearZafGdp = byCountryZafDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
-
-  console.log(byYearBraGdp);
 }
 
 // Importing Domestic Credit data with API and take out each countries' data
@@ -200,55 +237,55 @@ async function expDc() {
   });
 
 
-  let byYearBraDc = byCountryBraDc.filter(filterByYear).map(item => {
+  byYearBraDc = byCountryBraDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearChnDc = byCountryChnDc.filter(filterByYear).map(item => {
+  byYearChnDc = byCountryChnDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearCypDc = byCountryCypDc.filter(filterByYear).map(item => {
+  byYearCypDc = byCountryCypDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearDeuDc = byCountryDeuDc.filter(filterByYear).map(item => {
+  byYearDeuDc = byCountryDeuDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearGbrDc = byCountryGbrDc.filter(filterByYear).map(item => {
+  byYearGbrDc = byCountryGbrDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearHkgDc = byCountryHkgDc.filter(filterByYear).map(item => {
+  byYearHkgDc = byCountryHkgDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearIndDc = byCountryIndDc.filter(filterByYear).map(item => {
+  byYearIndDc = byCountryIndDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearJpnDc = byCountryJpnDc.filter(filterByYear).map(item => {
+  byYearJpnDc = byCountryJpnDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearRusDc = byCountryRusDc.filter(filterByYear).map(item => {
+  byYearRusDc = byCountryRusDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearSgpDc = byCountrySgpDc.filter(filterByYear).map(item => {
+  byYearSgpDc = byCountrySgpDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearThaDc = byCountryThaDc.filter(filterByYear).map(item => {
+  byYearThaDc = byCountryThaDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearUsaDc = byCountryUsaDc.filter(filterByYear).map(item => {
+  byYearUsaDc = byCountryUsaDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearZafDc = byCountryZafDc.filter(filterByYear).map(item => {
+  byYearZafDc = byCountryZafDc.filter(filterByYear).map(item => {
     return item.value;
   });
 
@@ -313,106 +350,95 @@ async function expPl() {
   });
 
 
-  let byYearBraPl = byCountryBraPl.filter(filterByYear).map(item => {
+  byYearBraPl = byCountryBraPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearChnPl = byCountryChnPl.filter(filterByYear).map(item => {
+  byYearChnPl = byCountryChnPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearCypPl = byCountryCypPl.filter(filterByYear).map(item => {
+  byYearCypPl = byCountryCypPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearDeuPl = byCountryDeuPl.filter(filterByYear).map(item => {
+  byYearDeuPl = byCountryDeuPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearGbrPl = byCountryGbrPl.filter(filterByYear).map(item => {
+  byYearGbrPl = byCountryGbrPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearHkgPl = byCountryHkgPl.filter(filterByYear).map(item => {
+  byYearHkgPl = byCountryHkgPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearIndPl = byCountryIndPl.filter(filterByYear).map(item => {
+  byYearIndPl = byCountryIndPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearJpnPl = byCountryJpnPl.filter(filterByYear).map(item => {
+  byYearJpnPl = byCountryJpnPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearRusPl = byCountryRusPl.filter(filterByYear).map(item => {
+  byYearRusPl = byCountryRusPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearSgpPl = byCountrySgpPl.filter(filterByYear).map(item => {
+  byYearSgpPl = byCountrySgpPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearThaPl = byCountryThaPl.filter(filterByYear).map(item => {
+  byYearThaPl = byCountryThaPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearUsaPl = byCountryUsaPl.filter(filterByYear).map(item => {
+  byYearUsaPl = byCountryUsaPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
-  let byYearZafPl = byCountryZafPl.filter(filterByYear).map(item => {
+  byYearZafPl = byCountryZafPl.filter(filterByYear).map(item => {
     return item.value;
   });
 
 }
 
-let srcScriptDiv = document.createElement('div');
-srcScriptDiv.setAttribute("class","chart");
-
-document.getElementById('chart').appendChild(srcScriptDiv);
-
-let scriptChartSrc = document.createElement('script');
-scriptChartSrc.src = "https://www.gstatic.com/charts/loader.js";
-scriptChartSrc.type = "text/javascript"; 
-
-let scriptChartData = document.createElement('script');
-scriptChartData.type = "text/javascript"; 
-scriptChartData.innerHTML = function drawSeriesChart() {
-    
+function dataOnClick() {
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawSeriesChart);
 
-  var data = google.visualization.arrayToDataTable([
-    ['ID', 'Domestic Private Credit to GDP', 'GDP', 'Region', 'Population'],
-    ['BRA',    byYearBraGdp,       1.67,      'North America',  33739900],
-    ['CHN',    79.84,              1.36,      'Europe',         81902307],
-    ['CYP',    78.6,               1.84,      'Europe',         5523095],
-    ['DEU',    72.73,              2.78,      'Middle East',    79716203],
-    ['GBR',    80.05,              2,         'Europe',         61801570],
-    ['HKG',    72.49,              1.7,       'Middle East',    73137148],
-    ['IND',    68.09,              4.77,      'Middle East',    31090763],
-    ['JPN',    81.55,              2.96,      'Middle East',    7485600],
-    ['RUS',    68.6,               1.54,      'Europe',         141850000],
-    ['SGP',    78.09,              2.05,      'North America',  307007000],
-    ['THA',    78.09,              2.05,      'North America',  307007000],
-    ['USA',    78.09,              2.05,      'North America',  307007000],
-    ['ZAF',    78.09,              2.05,      'Africa',  307007000]
-  ]);
-  console.log(byYearBraGdp);
-  var options = {
-    title: 'Correlation between GDP, Domestic Private Credit to GDP' + 'and population of world 13 countries',
-      hAxis: {title: 'GDP'},
-      vAxis: {title: 'Domestic Private Credit to GDP'},
-      bubble: {textStyle: {fontSize: 11}}
-    };
+  function drawSeriesChart() {
+    console.log(byYearBraGdp);
+    var data = google.visualization.arrayToDataTable([
+      ['ID', 'GDP', 'Domestic Private Credit to GDP', 'Country', 'Population'],
+      ['BRA',    byYearBraGdp[0],       byYearBraDc[0],      'Brasil',  byYearBraPl[0]],
+      ['CHN',    byYearChnGdp[0],              byYearChnDc[0],      'China',         byYearChnPl[0]],
+      ['CYP',    byYearCypGdp[0],               byYearCypDc[0],      'Cyprus',         byYearCypPl[0]],
+      ['DEU',    byYearDeuGdp[0],              byYearDeuDc[0],      'Germany',    byYearDeuPl[0]],
+      ['GBR',    byYearGbrGdp[0],              byYearGbrDc[0],         'United Kingdom',         byYearGbrPl[0]],
+      ['HKG',    byYearHkgGdp[0],              byYearHkgDc[0],       'Hong Kong',    byYearHkgPl[0]],
+      ['IND',    byYearIndGdp[0],              byYearIndDc[0],      'India',    byYearIndPl[0]],
+      ['JPN',    byYearJpnGdp[0],              byYearJpnDc[0],      'Japan',    byYearJpnPl[0]],
+      ['RUS',    byYearRusGdp[0],                byYearRusDc[0],      'Russia',          byYearRusPl[0]],
+      ['SGP',    byYearSgpGdp[0],              byYearSgpDc[0],      'Singapore',  byYearSgpPl[0]],
+      ['THA',    byYearThaGdp[0],              byYearThaDc[0],      'Thailand',  byYearThaPl[0]],
+      ['USA',    byYearUsaGdp[0],              byYearUsaDc[0],      'United States',  byYearUsaPl[0]],
+      ['ZAF',    byYearZafGdp[0],              byYearZafDc[0],      'South Africa',  byYearZafPl[0]]
+    ]);
+
+    var options = {
+      title: 'Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ' + year,
+        hAxis: {title: 'GDP'},
+        vAxis: {title: 'Domestic Private Credit to GDP'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
   
-  var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+    var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
 
-  chart.draw(data, options);
-};
+    chart.draw(data, options);
+  }
+}
 
-srcScriptDiv.appendChild(scriptChartSrc);
-srcScriptDiv.appendChild(scriptChartData);
 
 
