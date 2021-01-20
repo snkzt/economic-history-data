@@ -410,7 +410,7 @@ function dataOnClick() {
 
   function drawSeriesChart() {
     var data = google.visualization.arrayToDataTable([
-      ['ID', 'GDP', 'Domestic Private Credit to GDP', 'Country', 'Population'],
+      ['ID', 'GDP($)', 'Domestic Private Credit (% of GDP)', 'Country', 'Population'],
       ['BRA',    byYearBraGdp[0],       byYearBraDc[0],      'Brasil',  byYearBraPl[0]],
       ['CHN',    byYearChnGdp[0],              byYearChnDc[0],      'China',         byYearChnPl[0]],
       ['CYP',    byYearCypGdp[0],               byYearCypDc[0],      'Cyprus',         byYearCypPl[0]],
