@@ -4,11 +4,11 @@
 }
 
 .site-header {
-width: 100%;
-color: white;
-background-color: #252e33;
-font-size: 12pt;
-font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  color: white;
+  background-color: #252e33;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navigation {
@@ -42,56 +42,38 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 .main {
-width: 950px;
-margin: 0 auto;
+  width: 950px;
+  margin: 0 auto;
+} 
+
+.explanation {
+  margin-top: 100px;
+  text-align: center;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.3);
 }
 
-.concept-movie {
-width: 100%;
-display: inline-block;
-text-align: center;
-margin-top: 80px;
-}
-
-.title-call {
-font-family: Arial, Helvetica, sans-serif;
-font-weight: bolder;
-margin-top: 50%;
-font-size: 30pt;
-text-align: center;
-}
-
-.back-images {
-height: 300px;
-width: 700px;
-margin: 0 auto;
-margin-bottom: 80px;
-}
-
-.back-images img {
-float: left;
-display: block;
-height: 300px;
-width: 50%;
+#howtouse {
+  width: 70%;
+  height: 70%;
 }
 
 footer {
-width: 300px;
-position: absolute;
-top: 90%;
-left: 45%;
+  width: 300px;
+  position: absolute;
+  top: 90%;
+  left: 45%;
 }
 
 .img #gh {
-height: 50px;
-width: 50px;
-padding: 5px 5px 5px 5px;
+  height: 50px;
+  width: 50px;
+  padding: 5px 5px 5px 5px;
 }
 
 .gitaccount {
-color: gray;
-width: 150px;
-position: absolute;
-top: 15px;
-left: 50px;
+  color: gray;
+  width: 150px;
+  position: absolute;
+  top: 15px;
+  left: 50px;
 }

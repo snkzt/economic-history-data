@@ -409,7 +409,6 @@ function dataOnClick() {
   google.charts.setOnLoadCallback(drawSeriesChart);
 
   function drawSeriesChart() {
-    console.log(byYearBraGdp);
     var data = google.visualization.arrayToDataTable([
       ['ID', 'GDP', 'Domestic Private Credit to GDP', 'Country', 'Population'],
       ['BRA',    byYearBraGdp[0],       byYearBraDc[0],      'Brasil',  byYearBraPl[0]],
@@ -428,9 +427,9 @@ function dataOnClick() {
     ]);
 
     var options = {
-      title: 'Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ' + year,
-        hAxis: {title: 'GDP'},
-        vAxis: {title: 'Domestic Private Credit to GDP'},
+      title: 'Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ' + year, fontSize: 18,
+        hAxis: {title: 'GDP ($)'},
+        vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
         bubble: {textStyle: {fontSize: 11}}
       };
   

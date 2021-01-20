@@ -42,33 +42,16 @@
   margin: 0 auto;
 }
 
-.concept-movie {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  margin-top: 80px;
+.about {
+  margin-top: 100px;
+  padding: 100px;
+  background-color: antiquewhite;
+  font-style: italic;
 }
 
-.title-call {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-  margin-top: 50%;
-  font-size: 30pt;
-  text-align: center;
-}
-
-.back-images {
-  height: 300px;
-  width: 700px;
-  margin: 0 auto;
-  margin-bottom: 80px;
-}
-
-.back-images img {
-  float: left;
-  display: block;
-  height: 300px;
-  width: 50%;
+.exp {
+  margin-top: 30px;
+  font-size: 18pt;
 }
 
 footer {
