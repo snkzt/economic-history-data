@@ -1,6 +1,6 @@
-let datasetGDP = [];
-let datasetDomesticCredit = [];
-let datasetPopulation = [];
+const datasetGDP = [];
+const datasetDomesticCredit = [];
+const datasetPopulation = [];
 let year;
 let byYearBraGdp;
 let byYearChnGdp;
@@ -42,7 +42,7 @@ let byYearThaPl;
 let byYearUsaPl;
 let byYearZafPl;
   
-let yearSelector = document.getElementsByClassName('dropdown-item2');
+const yearSelector = document.getElementsByClassName('dropdown-item2');
 for (let i = 0; i < yearSelector.length; i++) {
   yearSelector[i].addEventListener('click', selectedYear);
 }
