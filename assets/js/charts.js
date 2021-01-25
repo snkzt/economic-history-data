@@ -1,6 +1,6 @@
-const datasetGDP = [];
-const datasetDomesticCredit = [];
-const datasetPopulation = [];
+let datasetGDP = [];
+let datasetDomesticCredit = [];
+let datasetPopulation = [];
 let year;
 let byYearBraGdp;
 let byYearChnGdp;
@@ -72,55 +72,55 @@ async function expGDP() {
   .then(response => response.json())
   .then(data => datasetGDP = data[1])
 
-  let byCountryBraDcGdp = datasetGDP.filter(item => {
+  const byCountryBraDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
 
-  let byCountryChnDcGdp = datasetGDP.filter(item => {
+  const byCountryChnDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'CHN');
   });
 
-  let byCountryCypDcGdp = datasetGDP.filter(item => {
+  const byCountryCypDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'CYP');
   });
 
-  let byCountryDeuDcGdp = datasetGDP.filter(item => {
+  const byCountryDeuDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'DEU');
   });
 
-  let byCountryGbrDcGdp = datasetGDP.filter(item => {
+  const byCountryGbrDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'GBR');
   });
 
-  let byCountryHkgDcGdp = datasetGDP.filter(item => {
+  const byCountryHkgDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'HKG');
   });
 
-  let byCountryIndDcGdp = datasetGDP.filter(item => {
+  const byCountryIndDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'IND');
   });
 
-  let byCountryJpnDcGdp = datasetGDP.filter(item => {
+  const byCountryJpnDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'JPN');
   });
 
-  let byCountryRusDcGdp = datasetGDP.filter(item => {
+  const byCountryRusDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'RUS');
   });
 
-  let byCountrySgpDcGdp = datasetGDP.filter(item => {
+  const byCountrySgpDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'SGP');
   });
 
-  let byCountryThaDcGdp = datasetGDP.filter(item => {
+  const byCountryThaDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'THA');
   });
 
-  let byCountryUsaDcGdp = datasetGDP.filter(item => {
+  const byCountryUsaDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'USA');
   });
 
-  let byCountryZafDcGdp = datasetGDP.filter(item => {
+  const byCountryZafDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
 
@@ -184,55 +184,55 @@ async function expDc() {
   .then(response => response.json())
   .then(data => datasetDomesticCredit = data[1])
 
- let byCountryBraDc = datasetDomesticCredit.filter(item => {
+ const byCountryBraDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
 
-  let byCountryChnDc = datasetDomesticCredit.filter(item => {
+  const byCountryChnDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'CHN');
   });
 
-  let byCountryCypDc = datasetDomesticCredit.filter(item => {
+  const byCountryCypDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'CYP');
   });
 
-  let byCountryDeuDc = datasetDomesticCredit.filter(item => {
+  const byCountryDeuDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'DEU');
   });
 
-  let byCountryGbrDc = datasetDomesticCredit.filter(item => {
+  const byCountryGbrDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'GBR');
   });
 
-  let byCountryHkgDc = datasetDomesticCredit.filter(item => {
+  const byCountryHkgDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'HKG');
   });
 
-  let byCountryIndDc = datasetDomesticCredit.filter(item => {
+  const byCountryIndDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'IND');
   });
 
-  let byCountryJpnDc = datasetDomesticCredit.filter(item => {
+  const byCountryJpnDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'JPN');
   });
 
-  let byCountryRusDc = datasetDomesticCredit.filter(item => {
+  const byCountryRusDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'RUS');
   });
 
-  let byCountrySgpDc = datasetDomesticCredit.filter(item => {
+  const byCountrySgpDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'SGP');
   });
 
-  let byCountryThaDc = datasetDomesticCredit.filter(item => {
+  const byCountryThaDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'THA');
   });
 
-  let byCountryUsaDc = datasetDomesticCredit.filter(item => {
+  const byCountryUsaDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'USA');
   });
 
-  let byCountryZafDc = datasetDomesticCredit.filter(item => {
+  const byCountryZafDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
 
@@ -297,55 +297,55 @@ async function expPl() {
   .then(response => response.json())
   .then(data => datasetPopulation = data[1])
 
-  let byCountryBraPl = datasetPopulation.filter(item => {
+  const byCountryBraPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
 
-  let byCountryChnPl = datasetPopulation.filter(item => {
+  const byCountryChnPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'CHN');
   });
 
-  let byCountryCypPl = datasetPopulation.filter(item => {
+  const byCountryCypPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'CYP');
   });
 
-  let byCountryDeuPl = datasetPopulation.filter(item => {
+  const byCountryDeuPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'DEU');
   });
 
-  let byCountryGbrPl = datasetPopulation.filter(item => {
+  const byCountryGbrPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'GBR');
   });
 
-  let byCountryHkgPl = datasetPopulation.filter(item => {
+  const byCountryHkgPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'HKG');
   });
 
-  let byCountryIndPl = datasetPopulation.filter(item => {
+  const byCountryIndPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'IND');
   });
 
-  let byCountryJpnPl = datasetPopulation.filter(item => {
+  const byCountryJpnPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'JPN');
   });
 
-  let byCountryRusPl = datasetPopulation.filter(item => {
+  const byCountryRusPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'RUS');
   });
 
-  let byCountrySgpPl = datasetPopulation.filter(item => {
+  const byCountrySgpPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'SGP');
   });
 
-  let byCountryThaPl = datasetPopulation.filter(item => {
+  const byCountryThaPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'THA');
   });
 
-  let byCountryUsaPl = datasetPopulation.filter(item => {
+  const byCountryUsaPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'USA');
   });
 
-  let byCountryZafPl = datasetPopulation.filter(item => {
+  const byCountryZafPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
 
@@ -426,14 +426,14 @@ function dataOnClick() {
       ['ZAF',    byYearZafGdp[0],              byYearZafDc[0],      'South Africa',  byYearZafPl[0]]
     ]);
 
-    var options = {
-      title: 'Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ' + year, fontSize: 18,
-        hAxis: {title: 'GDP ($)'},
-        vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
-        bubble: {textStyle: {fontSize: 11}}
-      };
+    const options = {
+      title: `Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ${year}`, fontSize: 18,
+      hAxis: {title: 'GDP ($)'},
+      vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
+      bubble: {textStyle: {fontSize: 11}}
+    };
   
-    var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+    const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
 
     chart.draw(data, options);
   }
