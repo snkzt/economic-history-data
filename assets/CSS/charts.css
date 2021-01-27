@@ -1,6 +1,7 @@
 .wrapper {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  background-color: lightseagreen;
   }
   
 .site-header {
@@ -63,11 +64,17 @@
   height: 500px;
 }
 
+#piechart {
+  width: 900px;
+  height: 500px;
+  padding-left: 13%;
+}
+
 footer {
   width: 300px;
   position: absolute;
-  top: 90%;
-  left: 45%;
+  padding-left: 10%;
+  margin-left: 39%;
 }
 
 .img #gh {

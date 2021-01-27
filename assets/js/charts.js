@@ -41,7 +41,19 @@ let byYearSgpPl;
 let byYearThaPl;
 let byYearUsaPl;
 let byYearZafPl;
-
+let pieBra;
+let pieChn;
+let pieCyp;
+let pieDeu;
+let pieGbr;
+let pieHkg;
+let pieInd;
+let pieJpn;
+let pieRus;
+let pieSgp;
+let pieTha;
+let pieUsa;
+let pieZaf;
 expGDP();
 expDc();
 expPl();
@@ -310,7 +322,9 @@ function selectedYear (event) {
   byYearZafPl = byCountryZafPl.filter(filterByYear).map(item => {
     return item.value;
   });
-  dataOnClick();
+  bubbleChart();
+  pieChart();
+  // pieBra = (byYearBraGdp, byYearBraDc, byYearBraPl) => (byYearBraGdp*byYearBraDc)/byYearBraPl;
 }
 
 function filterByCountryCode (item, code) {
@@ -325,7 +339,7 @@ function filterByYear (item) {
     }         
   }
 
-function dataOnClick() {
+function bubbleChart() {
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawSeriesChart);
 
@@ -360,5 +374,35 @@ function dataOnClick() {
   }
 }
 
+function pieChart() {
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
 
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Average amount of Domestic Private Credit($)'],
+        ['BRASIL',     0],
+        ['China',      2],
+        ['Cyprus',  2],
+        ['Germany', 2],
+        ['United Kingdom', 2],
+        ['Hong Kong', 2],
+        ['India', 2],
+        ['Japan', 2],
+        ['Russia', 2],
+        ['Singapore', 2],
+        ['Thailand', 2],
+        ['United States', 2],
+        ['South Africa',    7]
+      ]);
 
+      var options = {
+        title: `Average amount of Domestic Private Credit to GDP per person in 13 countries in ${year}`, fontSize: 15,
+        chartArea: {left: 30, right: 30},
+        legend: {alignment: 'center'}
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+    }
+}
