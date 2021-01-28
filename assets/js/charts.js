@@ -60,7 +60,7 @@ expPl();
 
 // GDP data with API and take out each countries' data
 async function expGDP() {
-  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/NY.GDP.PCAP.PP.KD?format=json&per_page=20000&source=2')
+  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/NY.GDP.MKTP.PP.KD?format=json&per_page=20000&source=2')
   .then(response => response.json())
   .then(data => datasetGDP = data[1])
 }
@@ -324,7 +324,19 @@ function selectedYear (event) {
   });
   bubbleChart();
   pieChart();
-  pieBrabra();
+  pieBraCal();
+  pieChnCal();
+  pieCypCal();
+  pieDeuCal();
+  pieGbrCal();
+  pieHkgCal();
+  pieIndCal();
+  pieJpnCal();
+  pieRusCal();
+  pieSgpCal();
+  pieThaCal();
+  pieUsaCal();
+  pieZafCal();
 }
 
 function filterByCountryCode (item, code) {
@@ -338,6 +350,58 @@ function filterByYear (item) {
       return item.value;
     }         
   }
+
+function pieBraCal() {
+  pieBra = (byYearBraGdp*byYearBraDc)/byYearBraPl;
+}
+
+function pieChnCal() {
+  pieChn = (byYearChnGdp*byYearChnDc)/byYearChnPl;
+}
+
+function pieCypCal() {
+  pieCyp = (byYearCypGdp*byYearCypDc)/byYearCypPl;
+}
+
+function pieDeuCal() {
+  pieDeu = (byYearDeuGdp*byYearDeuDc)/byYearDeuPl;
+}
+
+function pieGbrCal() {
+  pieGbr = (byYearGbrGdp*byYearGbrDc)/byYearGbrPl;
+}
+
+function pieHkgCal() {
+  pieHkg = (byYearHkgGdp*byYearHkgDc)/byYearHkgPl;
+}
+
+function pieIndCal() {
+  pieInd = (byYearIndGdp*byYearIndDc)/byYearIndPl;
+}
+
+function pieJpnCal() {
+  pieJpn = (byYearJpnGdp*byYearJpnDc)/byYearJpnPl;
+}
+
+function pieRusCal() {
+  pieRus = (byYearRusGdp*byYearRusDc)/byYearRusPl;
+}
+
+function pieSgpCal() {
+  pieSgp = (byYearSgpGdp*byYearSgpDc)/byYearSgpPl;
+}
+
+function pieThaCal() {
+  pieTha = (byYearThaGdp*byYearThaDc)/byYearThaPl;
+}
+
+function pieUsaCal() {
+  pieUsa = (byYearUsaGdp*byYearUsaDc)/byYearUsaPl;
+}
+
+function pieZafCal() {
+  pieZaf = (byYearZafGdp*byYearZafDc)/byYearZafPl;
+}
 
 function bubbleChart() {
   google.charts.load('current', {'packages':['corechart']});
@@ -366,7 +430,7 @@ function bubbleChart() {
       hAxis: {title: 'GDP ($)'},
       vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
       bubble: {textStyle: {fontSize: 11}}
-    };
+    }
   
     const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
 
@@ -382,31 +446,27 @@ function pieChart() {
       var data = google.visualization.arrayToDataTable([
         ['Country', 'Average amount of Domestic Private Credit($)'],
         ['BRASIL',     pieBra],
-        ['China',      2],
-        ['Cyprus',  2],
-        ['Germany', 2],
-        ['United Kingdom', 2],
-        ['Hong Kong', 2],
-        ['India', 2],
-        ['Japan', 2],
-        ['Russia', 2],
-        ['Singapore', 2],
-        ['Thailand', 2],
-        ['United States', 2],
-        ['South Africa',    7]
+        ['China',      pieChn],
+        ['Cyprus',  pieCyp],
+        ['Germany', pieDeu],
+        ['United Kingdom', pieGbr],
+        ['Hong Kong', pieHkg],
+        ['India', pieInd],
+        ['Japan', pieJpn],
+        ['Russia', pieRus],
+        ['Singapore', pieSgp],
+        ['Thailand', pieTha],
+        ['United States', pieUsa],
+        ['South Africa',    pieZaf]
       ]);
 
       var options = {
         title: `Average amount of Domestic Private Credit to GDP per person in 13 countries in ${year}`, fontSize: 15,
         chartArea: {left: 30, right: 30},
         legend: {alignment: 'center'}
-      };
+      }
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
       chart.draw(data, options);
     }
-}
-
-function pieBrabra() {
-  return pieBra = (byYearBraGdp*byYearBraDc)/byYearBraPl;
 }
