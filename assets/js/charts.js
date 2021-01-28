@@ -429,7 +429,13 @@ function bubbleChart() {
       title: `Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ${year}`, fontSize: 18,
       hAxis: {title: 'GDP ($)'},
       vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
-      bubble: {textStyle: {fontSize: 11}}
+      bubble: {
+        textStyle: {
+          fontSize: 11,
+          color: 'white',
+          auraColor: 'none'
+        }
+      }
     }
   
     const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
@@ -445,7 +451,7 @@ function pieChart() {
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ['Country', 'Average amount of Domestic Private Credit($)'],
-        ['BRASIL',     pieBra],
+        ['Brasil',     pieBra],
         ['China',      pieChn],
         ['Cyprus',  pieCyp],
         ['Germany', pieDeu],
@@ -461,9 +467,10 @@ function pieChart() {
       ]);
 
       var options = {
-        title: `Average amount of Domestic Private Credit to GDP per person in 13 countries in ${year}`, fontSize: 15,
+        title: `Average amount of Domestic Private Credit to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
         chartArea: {left: 30, right: 30},
-        legend: {alignment: 'center'}
+        legend: {alignment: 'center'},
+        pieSliceText: 'label'
       }
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
