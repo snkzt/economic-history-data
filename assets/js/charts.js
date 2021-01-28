@@ -324,7 +324,7 @@ function selectedYear (event) {
   });
   bubbleChart();
   pieChart();
-  // pieBra = (byYearBraGdp, byYearBraDc, byYearBraPl) => (byYearBraGdp*byYearBraDc)/byYearBraPl;
+  pieBrabra();
 }
 
 function filterByCountryCode (item, code) {
@@ -381,7 +381,7 @@ function pieChart() {
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ['Country', 'Average amount of Domestic Private Credit($)'],
-        ['BRASIL',     0],
+        ['BRASIL',     pieBra],
         ['China',      2],
         ['Cyprus',  2],
         ['Germany', 2],
@@ -405,4 +405,8 @@ function pieChart() {
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
       chart.draw(data, options);
     }
+}
+
+function pieBrabra() {
+  return pieBra = (byYearBraGdp*byYearBraDc)/byYearBraPl;
 }
