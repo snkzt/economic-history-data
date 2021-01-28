@@ -350,57 +350,44 @@ function filterByYear (item) {
       return item.value;
     }         
   }
-
 function pieBraCal() {
-  pieBra = (byYearBraGdp*byYearBraDc)/byYearBraPl;
+  pieBra = Math.round((byYearBraGdp*(byYearBraDc/100))/byYearBraPl);
 }
-
 function pieChnCal() {
-  pieChn = (byYearChnGdp*byYearChnDc)/byYearChnPl;
+  pieChn = Math.round((byYearChnGdp*(byYearChnDc/100))/byYearChnPl);
 }
-
 function pieCypCal() {
-  pieCyp = (byYearCypGdp*byYearCypDc)/byYearCypPl;
+  pieCyp = Math.round((byYearCypGdp*(byYearCypDc/100))/byYearCypPl);
 }
-
 function pieDeuCal() {
-  pieDeu = (byYearDeuGdp*byYearDeuDc)/byYearDeuPl;
+  pieDeu = Math.round((byYearDeuGdp*(byYearDeuDc/100))/byYearDeuPl);
 }
-
 function pieGbrCal() {
-  pieGbr = (byYearGbrGdp*byYearGbrDc)/byYearGbrPl;
+  pieGbr = Math.round((byYearGbrGdp*(byYearGbrDc/100))/byYearGbrPl);
 }
-
 function pieHkgCal() {
-  pieHkg = (byYearHkgGdp*byYearHkgDc)/byYearHkgPl;
+  pieHkg = Math.round((byYearHkgGdp*(byYearHkgDc/100))/byYearHkgPl);
 }
-
 function pieIndCal() {
-  pieInd = (byYearIndGdp*byYearIndDc)/byYearIndPl;
+  pieInd = Math.round((byYearIndGdp*(byYearIndDc/100))/byYearIndPl);
 }
-
 function pieJpnCal() {
-  pieJpn = (byYearJpnGdp*byYearJpnDc)/byYearJpnPl;
+  pieJpn = Math.round((byYearJpnGdp*(byYearJpnDc/100))/byYearJpnPl);
 }
-
 function pieRusCal() {
-  pieRus = (byYearRusGdp*byYearRusDc)/byYearRusPl;
+  pieRus = Math.round((byYearRusGdp*(byYearRusDc/100))/byYearRusPl);
 }
-
 function pieSgpCal() {
-  pieSgp = (byYearSgpGdp*byYearSgpDc)/byYearSgpPl;
+  pieSgp = Math.round((byYearSgpGdp*(byYearSgpDc/100))/byYearSgpPl);
 }
-
 function pieThaCal() {
-  pieTha = (byYearThaGdp*byYearThaDc)/byYearThaPl;
+  pieTha = Math.round((byYearThaGdp*(byYearThaDc/100))/byYearThaPl);
 }
-
 function pieUsaCal() {
-  pieUsa = (byYearUsaGdp*byYearUsaDc)/byYearUsaPl;
+  pieUsa = Math.round((byYearUsaGdp*(byYearUsaDc/100))/byYearUsaPl);
 }
-
 function pieZafCal() {
-  pieZaf = (byYearZafGdp*byYearZafDc)/byYearZafPl;
+  pieZaf = Math.round((byYearZafGdp*(byYearZafDc/100))/byYearZafPl);
 }
 
 function bubbleChart() {
@@ -467,10 +454,10 @@ function pieChart() {
       ]);
 
       var options = {
-        title: `Average amount of Domestic Private Credit to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
+        title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
         chartArea: {left: 30, right: 30},
         legend: {alignment: 'center'},
-        pieSliceText: 'label'
+        pieSliceText: 'value'
       }
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
