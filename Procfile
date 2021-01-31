@@ -1,1 +1,1 @@
-web: node charts.js
+web: npm start
