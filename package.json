@@ -1,0 +1,19 @@
+{
+  "name": "economic-history-data",
+  "version": "1.0.0",
+  "description": "\"A web page to show how world's ecoomy situation with charts. Visitors can choose years to see changes in 3 different data.\"",
+  "main": "charts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snkzt/economic-history-data.git"
+  },
+  "author": "Saki Nakazato (snkzt@mercari.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snkzt/economic-history-data/issues"
+  },
+  "homepage": "https://github.com/snkzt/economic-history-data#readme"
+}
