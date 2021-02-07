@@ -84,11 +84,9 @@ const yearSelector = document.getElementById('year-slider');
 yearSelector.addEventListener('input', sliderInput);
 const spanValue = document.getElementById('current-value');
 
-
+setTimeout(yearDefault, 200);
 function yearDefault() {
-  window.onload = (val) => {
-  setCurrentValue(yearSelector.value);
-  }
+  setCurrentValue(yearSelector.value)
 }
 
 // For default setting
