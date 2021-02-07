@@ -58,46 +58,49 @@ expGDP();
 expDc();
 expPl();
 
-// GDP data with API and take out each countries' data
-async function expGDP() {
-  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/NY.GDP.MKTP.PP.KD?format=json&per_page=20000&source=2')
-  .then(response => response.json())
-  .then(data => datasetGDP = data[1])
-}
+  // GDP data with API and take out each countries' data
+  async function expGDP() {
+    await fetch('https://api.worldbank.org/v2/en/country/all/indicator/NY.GDP.MKTP.PP.KD?format=json&per_page=20000&source=2')
+    .then(response => response.json())
+    .then(data => datasetGDP = data[1])
+  }
 
-// Importing Domestic Credit data with API and take out each countries' data
-async function expDc() {
-  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=20000&source=2')
-  .then(response => response.json())
-  .then(data => datasetDomesticCredit = data[1])
-}
+  // Importing Domestic Credit data with API and take out each countries' data
+  async function expDc() {
+    await fetch('https://api.worldbank.org/v2/en/country/all/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=20000&source=2')
+    .then(response => response.json())
+    .then(data => datasetDomesticCredit = data[1])
+  }
 
-// Importing Population data with API and take out each countries' data
-async function expPl() {
-  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&source=2')
-  .then(response => response.json())
-  .then(data => datasetPopulation = data[1])
-}
+  // Importing Population data with API and take out each countries' data
+  async function expPl() {
+    await fetch('https://api.worldbank.org/v2/en/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&source=2')
+    .then(response => response.json())
+    .then(data => datasetPopulation = data[1])
+  }
+
 
 const yearSelector = document.getElementById('year-slider');
-yearSelector.addEventListener('change', sliderInput);
+yearSelector.addEventListener('input', sliderInput);
 const spanValue = document.getElementById('current-value');
 
-window.onload = () => {
-  // yearSelector.addEventListener('change', selectedYear);
+
+function yearDefault() {
+  window.onload = (val) => {
   setCurrentValue(yearSelector.value);
+  }
 }
 
 // For default setting
-const setCurrentValue = (val) => {
+function setCurrentValue(val) {
   spanValue.innerText = val;
   year = val;
-  selectedYear ()
+  selectedYear()
 }
 
 //For update the input vhange
 function sliderInput (event) {
-  setCurrentValue(event.target.innerText);
+  setCurrentValue(event.target.value);
 }
 
 function selectedYear () {
@@ -442,7 +445,6 @@ function bubbleChart() {
     }
   
     const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
-
     chart.draw(data, options);
   }
 }
