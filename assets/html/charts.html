@@ -60,6 +60,11 @@
   </div>
     <div class=main id=chart>
       <div id="series_chart_div"></div>
+      <div>
+        <label for="year-slider" class="ys-label">Choose a year for the chart</label>
+        <input type="range" class="slider" id="year-slider"  min="1990" max="2019" name="year" step="1" value="2005">
+        <p>As of <span id="current-value"></span></p>
+      </div>
       <div id="piechart"></div>
     </div>
     <footer>

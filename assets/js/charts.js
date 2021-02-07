@@ -79,13 +79,28 @@ async function expPl() {
   .then(data => datasetPopulation = data[1])
 }
 
-const yearSelector = document.getElementsByClassName('dropdown-item2');
-for (let i = 0; i < yearSelector.length; i++) {
-  yearSelector[i].addEventListener('click', selectedYear);
+const yearSelector = document.getElementById('year-slider');
+yearSelector.addEventListener('change', sliderInput);
+const spanValue = document.getElementById('current-value');
+
+window.onload = () => {
+  // yearSelector.addEventListener('change', selectedYear);
+  setCurrentValue(yearSelector.value);
 }
 
-function selectedYear (event) {
-  year = event.target.innerText;
+// For default setting
+const setCurrentValue = (val) => {
+  spanValue.innerText = val;
+  year = val;
+  selectedYear ()
+}
+
+//For update the input vhange
+function sliderInput (event) {
+  setCurrentValue(event.target.innerText);
+}
+
+function selectedYear () {
   const byCountryBraDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
@@ -350,6 +365,7 @@ function filterByYear (item) {
       return item.value;
     }         
   }
+
 function pieBraCal() {
   pieBra = Math.round((byYearBraGdp*(byYearBraDc/100))/byYearBraPl);
 }
