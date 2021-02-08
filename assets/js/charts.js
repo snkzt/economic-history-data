@@ -57,6 +57,7 @@ let pieZaf;
 expGDP();
 expDc();
 expPl();
+yearDefault();
 
   // GDP data with API and take out each countries' data
   async function expGDP() {
@@ -79,14 +80,6 @@ expPl();
     .then(data => datasetPopulation = data[1])
   }
 
-  // async function yearDefault() {
-  //   const a = await expGDP()
-  //   .then(console.log(a[0]))
-  // }
-// function yearDefault() {
-//   setCurrentValue(yearSelector.value)
-// }
-
 const yearSelector = document.getElementById('year-slider');
 yearSelector.addEventListener('input', sliderInput);
 const spanValue = document.getElementById('current-value');
@@ -99,6 +92,13 @@ function setCurrentValue(val) {
   spanValue.innerText = val;
   year = val;
   selectedYear()
+}
+
+async function yearDefault() {
+  await expGDP()
+  await expDc()
+  await expPl()
+  setCurrentValue(yearSelector.value);
 }
 
 function selectedYear () {
