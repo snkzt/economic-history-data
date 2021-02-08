@@ -452,7 +452,7 @@ function pieChart() {
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-    let data = google.visualization.arrayToDataTable([
+    const data = google.visualization.arrayToDataTable([
       ['Country', 'Average amount of Domestic Private Credit($)'],
       ['Brasil',     pieBra],
       ['China',      pieChn],
@@ -469,14 +469,14 @@ function pieChart() {
       ['South Africa',    pieZaf]
     ]);
 
-    let options = {
+    const options = {
       title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
       chartArea: {left: 30, right: 30},
       legend: {alignment: 'center'},
       pieSliceText: 'value'
     }
 
-    let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    const chart = new google.visualization.PieChart(document.getElementById('piechart'));
     chart.draw(data, options);
   }
 }
