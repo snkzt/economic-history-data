@@ -1,92 +1,97 @@
-.wrapper {
-  width: 100%;
-  margin: 0 auto;
-  background-color: lightseagreen;
-  }
-  
-.site-header {
-  width: 100%;
-  color: white;
-  background-color: #252e33;
-  font-size: 12pt;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .navigation {
-  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1c2041;
-}
-
-#atitle {
-  display: block;
-  width: 170px;
-  margin-right: 100px;
-  text-align: center;
-  line-height: 21px;
-  font-family: 'Bradley Hand', cursive;
-  font-style: italic;
-  font-size: 14pt;
-  color: white;
-  background-color: rgb(133, 133, 132);
 }
 
 .nav-link {
-  display: block;
-  margin-top: 10px;
-  margin-right: 276px;
+  margin-right: 50px;
+  line-height: 18px;
+  text-align: center;
   color:white;
   font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#dropdownMenu2 {
-  font-size: large;
-  position: absolute;
-  margin-top:12px;
-  margin-left: 3px;
-  top: 0px;
-  left: 58.5%;
-  background-color: #1c2041;
-  border-color: #1c2041;
+#home {
+  font-family: 'Bradley Hand', cursive;
+  font-style: italic;
+  color:white;
+  width: 170px;
+  background-color: rgb(133, 133, 132);
+}
+
+#home:hover {
+  text-decoration: underline;
+}
+
+#charts {
+  color: gray;
 }
 
 .main {
-  width: 950px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
-#chart {
-  width: 950px;
-  margin: 8% auto;
+.slider-class {
+  display: flex;
+  padding-top: 30px;
 }
 
-#series_chart_div {
-  width: 900px;
-  height: 500px;
+.ys-label {
+  display: flex;
+}
+
+.slider {
+  display: flex;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  height: 18px;
+  width: 500px;
+  background: #c8c8c8;
+  border-radius: 10px;
+  border: solid 5px #eeeeee;
+}
+
+::-webkit-slider-thumb{
+  display: flex;
+  -webkit-appearance:none;
+  background:rgb(163, 163, 163);
+  height:20px;
+  width:20px;
+  border-radius:50%;
+}
+
+.ys-indication {
+  display: flex;
 }
 
 #piechart {
+  display: flex;
   width: 900px;
   height: 500px;
-  padding-left: 13%;
+  padding-left: 8%;
 }
 
-footer {
-  width: 300px;
-  position: absolute;
-  padding-left: 10%;
-  margin-left: 39%;
+#series_chart_div {
+  display: flex;
+  width: 900px;
+  height: 500px;
 }
 
-.img #gh {
-  height: 50px;
-  width: 50px;
-  padding: 5px 5px 5px 5px;
+.foot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gitaccount {
-  color: gray;
-  width: 150px;
-  position: absolute;
-  top: 15px;
-  left: 50px;
+#gl {
+height: 70%;
+width: 70%;
 }

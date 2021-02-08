@@ -1,76 +1,62 @@
-.wrapper {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-.site-header {
-  width: 100%;
-  color: white;
-  background-color: #252e33;
-  font-size: 12pt;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .navigation {
-  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1c2041;
 }
 
-#atitle {
-  display: block;
-  width: 170px;
-  margin-right: 100px;
+.nav-link {
+  margin-right: 50px;
+  line-height: 18px;
   text-align: center;
-  line-height: 21px;
+  color:white;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#home {
   font-family: 'Bradley Hand', cursive;
   font-style: italic;
-  font-size: 14pt;
-  color: black;
+  color:black;
+  width: 170px;
   background-color: rgb(133, 133, 132);
 }
 
-.nav-link {
-  display: block;
-  margin-top: 10px;
-  margin-right: 100px;
-  color:white;
-  font-size: large;
-}
-
-.main {
-  width: 950px;
-  margin: 0 auto;
+#home:hover {
+  text-decoration: underline;
 }
 
 .about {
+  display: flex;
   margin-top: 100px;
   padding: 100px;
+  justify-content: center;
+  align-items: center;
   background-color: antiquewhite;
   font-style: italic;
 }
 
+.title {
+  display: flex;
+  padding-right: 30px;
+}
+
 .exp {
-  margin-top: 30px;
-  font-size: 18pt;
+  display: flex;
+  padding-left: 30px;
 }
 
-footer {
-  width: 300px;
-  position: absolute;
-  top: 90%;
-  left: 45%;
+.wording {
+  padding-left: 30px;
 }
 
-.img #gh {
-  height: 50px;
-  width: 50px;
-  padding: 5px 5px 5px 5px;
+.foot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gitaccount {
-  color: gray;
-  width: 150px;
-  position: absolute;
-  top: 15px;
-  left: 50px;
+#gl {
+height: 70%;
+width: 70%;
 }
