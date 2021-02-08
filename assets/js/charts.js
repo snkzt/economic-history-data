@@ -59,30 +59,37 @@ expDc();
 expPl();
 yearDefault();
 
-  // GDP data with API and take out each countries' data
-  async function expGDP() {
-    await fetch('https://api.worldbank.org/v2/en/country/all/indicator/NY.GDP.MKTP.PP.KD?format=json&per_page=20000&source=2')
-    .then(response => response.json())
-    .then(data => datasetGDP = data[1])
-  }
-
-  // Importing Domestic Credit data with API and take out each countries' data
-  async function expDc() {
-    await fetch('https://api.worldbank.org/v2/en/country/all/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=20000&source=2')
-    .then(response => response.json())
-    .then(data => datasetDomesticCredit = data[1])
-  }
-
-  // Importing Population data with API and take out each countries' data
-  async function expPl() {
-    await fetch('https://api.worldbank.org/v2/en/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&source=2')
-    .then(response => response.json())
-    .then(data => datasetPopulation = data[1])
-  }
-
 const yearSelector = document.getElementById('year-slider');
-yearSelector.addEventListener('input', sliderInput);
 const spanValue = document.getElementById('current-value');
+yearSelector.addEventListener('input', sliderInput);
+
+// GDP data with API and take out each countries' data
+async function expGDP() {
+  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/NY.GDP.MKTP.PP.KD?format=json&per_page=20000&source=2')
+  .then(response => response.json())
+  .then(data => datasetGDP = data[1])
+}
+
+// Importing Domestic Credit data with API and take out each countries' data
+async function expDc() {
+  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=20000&source=2')
+  .then(response => response.json())
+  .then(data => datasetDomesticCredit = data[1])
+}
+
+// Importing Population data with API and take out each countries' data
+async function expPl() {
+  await fetch('https://api.worldbank.org/v2/en/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&source=2')
+  .then(response => response.json())
+  .then(data => datasetPopulation = data[1])
+}
+
+async function yearDefault() {
+  await expGDP()
+  await expDc()
+  await expPl()
+  setCurrentValue(yearSelector.value);
+}
 
 function sliderInput (event) {
   setCurrentValue(event.target.value);
@@ -91,14 +98,7 @@ function sliderInput (event) {
 function setCurrentValue(val) {
   spanValue.innerText = val;
   year = val;
-  selectedYear()
-}
-
-async function yearDefault() {
-  await expGDP()
-  await expDc()
-  await expPl()
-  setCurrentValue(yearSelector.value);
+  selectedYear();
 }
 
 function selectedYear () {
@@ -362,10 +362,10 @@ function filterByCountryCode (item, code) {
 }
 
 function filterByYear (item) {
-    if (item.date === year) {
-      return item.value;
-    }         
-  }
+  if (item.date === year) {
+    return item.value;
+  }         
+}
 
 function pieBraCal() {
   pieBra = Math.round((byYearBraGdp*(byYearBraDc/100))/byYearBraPl);
@@ -451,32 +451,32 @@ function pieChart() {
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Country', 'Average amount of Domestic Private Credit($)'],
-        ['Brasil',     pieBra],
-        ['China',      pieChn],
-        ['Cyprus',  pieCyp],
-        ['Germany', pieDeu],
-        ['United Kingdom', pieGbr],
-        ['Hong Kong', pieHkg],
-        ['India', pieInd],
-        ['Japan', pieJpn],
-        ['Russia', pieRus],
-        ['Singapore', pieSgp],
-        ['Thailand', pieTha],
-        ['United States', pieUsa],
-        ['South Africa',    pieZaf]
-      ]);
+  function drawChart() {
+    let data = google.visualization.arrayToDataTable([
+      ['Country', 'Average amount of Domestic Private Credit($)'],
+      ['Brasil',     pieBra],
+      ['China',      pieChn],
+      ['Cyprus',  pieCyp],
+      ['Germany', pieDeu],
+      ['United Kingdom', pieGbr],
+      ['Hong Kong', pieHkg],
+      ['India', pieInd],
+      ['Japan', pieJpn],
+      ['Russia', pieRus],
+      ['Singapore', pieSgp],
+      ['Thailand', pieTha],
+      ['United States', pieUsa],
+      ['South Africa',    pieZaf]
+    ]);
 
-      var options = {
-        title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
-        chartArea: {left: 30, right: 30},
-        legend: {alignment: 'center'},
-        pieSliceText: 'value'
-      }
-
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-      chart.draw(data, options);
+    let options = {
+      title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
+      chartArea: {left: 30, right: 30},
+      legend: {alignment: 'center'},
+      pieSliceText: 'value'
     }
+
+    let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
 }
