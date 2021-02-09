@@ -75,7 +75,6 @@
 
 .ys-indication {
   display: flex;
-  /* margin-bottom: -10px; */
 }
 
 #piechart {
@@ -83,7 +82,6 @@
   width: 900px;
   height: 500px;
   padding-left: 8%;
-  background-color: salmon;
 }
 
 #series_chart_div {
