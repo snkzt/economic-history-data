@@ -39,7 +39,10 @@
 
 .slider-class {
   display: flex;
+  flex-direction: column;
   padding-top: 30px;
+  align-items: center;
+  font-size: 25px;
 }
 
 .ys-label {
@@ -48,28 +51,31 @@
 
 .slider {
   display: flex;
+  margin: 10px 0px 10px 0px;
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
   outline: none;
-  height: 18px;
+  height: 15px;
   width: 500px;
   background: #c8c8c8;
   border-radius: 10px;
-  border: solid 5px #eeeeee;
+  border: solid 4px #eeeeee;
 }
 
 ::-webkit-slider-thumb{
   display: flex;
   -webkit-appearance:none;
   background:rgb(163, 163, 163);
-  height:20px;
-  width:20px;
+  height:30px;
+  width:30px;
   border-radius:50%;
+  border: 5px solid #ffffff;
 }
 
 .ys-indication {
   display: flex;
+  /* margin-bottom: -10px; */
 }
 
 #piechart {
@@ -77,6 +83,7 @@
   width: 900px;
   height: 500px;
   padding-left: 8%;
+  background-color: salmon;
 }
 
 #series_chart_div {
