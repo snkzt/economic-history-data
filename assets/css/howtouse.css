@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
 }
 
 .explanation-item > img {
@@ -52,7 +53,7 @@
 .explanation-item > ol {
   height: 90%;
   width:90%;
-  line-height: 25px;
+  line-height: 30px;
 }
 
 .foot-container {
