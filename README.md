@@ -5,6 +5,9 @@ Domestic Credit to the Private Sector surpasses GDP means the country is in debt
 In this situation for a long time would make an economy vulnerable even to a slight damage to it.
 The aim for the web page is for visitors to find out their own truth of how to check the soundness of an economy.
 
+# Browser
+https://secure-brook-19083.herokuapp.com/
+
 ## Description
 ### How to Use
 There are 3 buttons
