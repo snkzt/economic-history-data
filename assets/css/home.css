@@ -28,8 +28,8 @@
 
 .about {
   display: flex;
-  margin: 150px 100px 0px 100px;
-  padding: 200px 150px 200px 150px;
+  margin: 5%;
+  padding: 8%;
   justify-content: center;
   align-items: center;
   background-color: antiquewhite;
