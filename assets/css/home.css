@@ -28,28 +28,17 @@
 
 .about {
   display: flex;
-  margin: 100px;
-  padding: 100px;
-  height: 600px;
+  margin: 150px 100px 0px 100px;
+  padding: 200px 150px 200px 150px;
   justify-content: center;
   align-items: center;
   background-color: antiquewhite;
   font-style: italic;
 }
 
-.title {
-  display: flex;
-  padding-right: 30px;
-}
-
 .exp {
-  display: flex;
   padding-left: 30px;
-}
-
-.wording {
-  display: flex;
-  padding-left: 30px;
+  align-items: center;
 }
 
 .foot-container {
