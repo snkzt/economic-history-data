@@ -54,6 +54,8 @@ let pieSgp;
 let pieTha;
 let pieUsa;
 let pieZaf;
+let dataBubble;
+let dataPie;
 expGDP();
 expDc();
 expPl();
@@ -101,7 +103,7 @@ function setCurrentValue(val) {
   selectedYear();
 }
 
-function selectedYear () {
+function countryGdpbyYear() {
   const byCountryBraDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
@@ -141,86 +143,6 @@ function selectedYear () {
   const byCountryZafDcGdp = datasetGDP.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
-  const byCountryBraDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'BRA');
-  });
-  const byCountryChnDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'CHN');
-  });
-  const byCountryCypDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'CYP');
-  });
-  const byCountryDeuDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'DEU');
-  });
-  const byCountryGbrDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'GBR');
-  });
-  const byCountryHkgDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'HKG');
-  });
-  const byCountryIndDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'IND');
-  });
-  const byCountryJpnDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'JPN');
-  });
-  const byCountryRusDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'RUS');
-  });
-  const byCountrySgpDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'SGP');
-  });
-  const byCountryThaDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'THA');
-  });
-  const byCountryUsaDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'USA');
-  });
-  const byCountryZafDc = datasetDomesticCredit.filter(item => {
-    return filterByCountryCode(item,'ZAF');
-  });
-  const byCountryBraPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'BRA');
-  });
-  const byCountryChnPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'CHN');
-  });
-  const byCountryCypPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'CYP');
-  });
-  const byCountryDeuPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'DEU');
-  });
-  const byCountryGbrPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'GBR');
-  });
-  const byCountryHkgPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'HKG');
-  });
-  const byCountryIndPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'IND');
-  });
-  const byCountryJpnPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'JPN');
-  });
-  const byCountryRusPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'RUS');
-  });
-  const byCountrySgpPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'SGP');
-  });
-  const byCountryThaPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'THA');
-  });
-  const byCountryUsaPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'USA');
-  });
-  const byCountryZafPl = datasetPopulation.filter(item => {
-    return filterByCountryCode(item,'ZAF');
-  });
-
-
   byYearBraGdp = byCountryBraDcGdp.filter(filterByYear).map(item => {
     return item.value;
   });
@@ -259,6 +181,48 @@ function selectedYear () {
   });
   byYearZafGdp = byCountryZafDcGdp.filter(filterByYear).map(item => {
     return item.value;
+  });
+}
+
+function countryDcbyYear() {
+  const byCountryBraDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'BRA');
+  });
+  const byCountryChnDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'CHN');
+  });
+  const byCountryCypDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'CYP');
+  });
+  const byCountryDeuDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'DEU');
+  });
+  const byCountryGbrDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'GBR');
+  });
+  const byCountryHkgDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'HKG');
+  });
+  const byCountryIndDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'IND');
+  });
+  const byCountryJpnDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'JPN');
+  });
+  const byCountryRusDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'RUS');
+  });
+  const byCountrySgpDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'SGP');
+  });
+  const byCountryThaDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'THA');
+  });
+  const byCountryUsaDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'USA');
+  });
+  const byCountryZafDc = datasetDomesticCredit.filter(item => {
+    return filterByCountryCode(item,'ZAF');
   });
   byYearBraDc = byCountryBraDc.filter(filterByYear).map(item => {
     return item.value;
@@ -299,6 +263,48 @@ function selectedYear () {
   byYearZafDc = byCountryZafDc.filter(filterByYear).map(item => {
     return item.value;
   });
+}
+
+function countryPlbyYear() {
+  const byCountryBraPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'BRA');
+  });
+  const byCountryChnPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'CHN');
+  });
+  const byCountryCypPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'CYP');
+  });
+  const byCountryDeuPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'DEU');
+  });
+  const byCountryGbrPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'GBR');
+  });
+  const byCountryHkgPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'HKG');
+  });
+  const byCountryIndPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'IND');
+  });
+  const byCountryJpnPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'JPN');
+  });
+  const byCountryRusPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'RUS');
+  });
+  const byCountrySgpPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'SGP');
+  });
+  const byCountryThaPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'THA');
+  });
+  const byCountryUsaPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'USA');
+  });
+  const byCountryZafPl = datasetPopulation.filter(item => {
+    return filterByCountryCode(item,'ZAF');
+  });
   byYearBraPl = byCountryBraPl.filter(filterByYear).map(item => {
     return item.value;
   });
@@ -338,6 +344,12 @@ function selectedYear () {
   byYearZafPl = byCountryZafPl.filter(filterByYear).map(item => {
     return item.value;
   });
+}
+
+function selectedYear() {
+  countryGdpbyYear();
+  countryDcbyYear();
+  countryPlbyYear();
   bubbleChart();
   pieChart();
   pieBraCal();
@@ -407,76 +419,82 @@ function pieZafCal() {
   pieZaf = Math.round((byYearZafGdp*(byYearZafDc/100))/byYearZafPl);
 }
 
+function drawSeriesChart() {
+  dataBubble = google.visualization.arrayToDataTable([
+    ['ID', 'GDP($)', 'Domestic Private Credit (% of GDP)', 'Country', 'Population'],
+    ['BRA',    byYearBraGdp[0],       byYearBraDc[0],      'Brasil',  byYearBraPl[0]],
+    ['CHN',    byYearChnGdp[0],              byYearChnDc[0],      'China',         byYearChnPl[0]],
+    ['CYP',    byYearCypGdp[0],               byYearCypDc[0],      'Cyprus',         byYearCypPl[0]],
+    ['DEU',    byYearDeuGdp[0],              byYearDeuDc[0],      'Germany',    byYearDeuPl[0]],
+    ['GBR',    byYearGbrGdp[0],              byYearGbrDc[0],         'United Kingdom',         byYearGbrPl[0]],
+    ['HKG',    byYearHkgGdp[0],              byYearHkgDc[0],       'Hong Kong',    byYearHkgPl[0]],
+    ['IND',    byYearIndGdp[0],              byYearIndDc[0],      'India',    byYearIndPl[0]],
+    ['JPN',    byYearJpnGdp[0],              byYearJpnDc[0],      'Japan',    byYearJpnPl[0]],
+    ['RUS',    byYearRusGdp[0],                byYearRusDc[0],      'Russia',          byYearRusPl[0]],
+    ['SGP',    byYearSgpGdp[0],              byYearSgpDc[0],      'Singapore',  byYearSgpPl[0]],
+    ['THA',    byYearThaGdp[0],              byYearThaDc[0],      'Thailand',  byYearThaPl[0]],
+    ['USA',    byYearUsaGdp[0],              byYearUsaDc[0],      'United States',  byYearUsaPl[0]],
+    ['ZAF',    byYearZafGdp[0],              byYearZafDc[0],      'South Africa',  byYearZafPl[0]]
+  ]);
+  chartDrawBubble();
+}
+
+const optionsBubble = {
+  title: `Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries`, fontSize: 18,
+  hAxis: {title: 'GDP ($)'},
+  vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
+  bubble: {
+    textStyle: {
+      fontSize: 11,
+      color: 'white',
+      auraColor: 'none'
+    }
+  }
+}
+
+function chartDrawBubble() {
+  const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+  chart.draw(dataBubble, optionsBubble);
+}
+
 function bubbleChart() {
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawSeriesChart);
+}
 
-  function drawSeriesChart() {
-    const data = google.visualization.arrayToDataTable([
-      ['ID', 'GDP($)', 'Domestic Private Credit (% of GDP)', 'Country', 'Population'],
-      ['BRA',    byYearBraGdp[0],       byYearBraDc[0],      'Brasil',  byYearBraPl[0]],
-      ['CHN',    byYearChnGdp[0],              byYearChnDc[0],      'China',         byYearChnPl[0]],
-      ['CYP',    byYearCypGdp[0],               byYearCypDc[0],      'Cyprus',         byYearCypPl[0]],
-      ['DEU',    byYearDeuGdp[0],              byYearDeuDc[0],      'Germany',    byYearDeuPl[0]],
-      ['GBR',    byYearGbrGdp[0],              byYearGbrDc[0],         'United Kingdom',         byYearGbrPl[0]],
-      ['HKG',    byYearHkgGdp[0],              byYearHkgDc[0],       'Hong Kong',    byYearHkgPl[0]],
-      ['IND',    byYearIndGdp[0],              byYearIndDc[0],      'India',    byYearIndPl[0]],
-      ['JPN',    byYearJpnGdp[0],              byYearJpnDc[0],      'Japan',    byYearJpnPl[0]],
-      ['RUS',    byYearRusGdp[0],                byYearRusDc[0],      'Russia',          byYearRusPl[0]],
-      ['SGP',    byYearSgpGdp[0],              byYearSgpDc[0],      'Singapore',  byYearSgpPl[0]],
-      ['THA',    byYearThaGdp[0],              byYearThaDc[0],      'Thailand',  byYearThaPl[0]],
-      ['USA',    byYearUsaGdp[0],              byYearUsaDc[0],      'United States',  byYearUsaPl[0]],
-      ['ZAF',    byYearZafGdp[0],              byYearZafDc[0],      'South Africa',  byYearZafPl[0]]
-    ]);
+function drawChart() {
+  dataPie = google.visualization.arrayToDataTable([
+    ['Country', 'Average amount of Domestic Private Credit($)'],
+    ['Brasil',     pieBra],
+    ['China',      pieChn],
+    ['Cyprus',  pieCyp],
+    ['Germany', pieDeu],
+    ['United Kingdom', pieGbr],
+    ['Hong Kong', pieHkg],
+    ['India', pieInd],
+    ['Japan', pieJpn],
+    ['Russia', pieRus],
+    ['Singapore', pieSgp],
+    ['Thailand', pieTha],
+    ['United States', pieUsa],
+    ['South Africa',    pieZaf]
+  ]);
+  chartDrawPie();
+}
 
-    const options = {
-      title: `Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries in ${year}`, fontSize: 18,
-      hAxis: {title: 'GDP ($)'},
-      vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
-      bubble: {
-        textStyle: {
-          fontSize: 11,
-          color: 'white',
-          auraColor: 'none'
-        }
-      }
-    }
-  
-    const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
-    chart.draw(data, options);
-  }
+const optionsPie = {
+  title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries`, fontSize: 15,
+  chartArea: {left: 30, right: 30},
+  legend: {alignment: 'center'},
+  pieSliceText: 'value'
+}
+
+function chartDrawPie() {
+  const chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(dataPie, optionsPie);
 }
 
 function pieChart() {
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    const data = google.visualization.arrayToDataTable([
-      ['Country', 'Average amount of Domestic Private Credit($)'],
-      ['Brasil',     pieBra],
-      ['China',      pieChn],
-      ['Cyprus',  pieCyp],
-      ['Germany', pieDeu],
-      ['United Kingdom', pieGbr],
-      ['Hong Kong', pieHkg],
-      ['India', pieInd],
-      ['Japan', pieJpn],
-      ['Russia', pieRus],
-      ['Singapore', pieSgp],
-      ['Thailand', pieTha],
-      ['United States', pieUsa],
-      ['South Africa',    pieZaf]
-    ]);
-
-    const options = {
-      title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries in ${year}`, fontSize: 15,
-      chartArea: {left: 30, right: 30},
-      legend: {alignment: 'center'},
-      pieSliceText: 'value'
-    }
-
-    const chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    chart.draw(data, options);
-  }
 }
