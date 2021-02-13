@@ -29,6 +29,7 @@
 
 .container-fluid {
   display: flex;
+  flex-basis: 500px;
   justify-content: center;
   align-items: center;
   margin-top: 3%;
@@ -37,13 +38,28 @@
   background-color: antiquewhite;
 }
 
-.exp {
-  flex-basis: 500px;
-  /* width: 80%;
-  height: 50%; */
+.title {
   padding-left: 20px;
-  align-items: center;
-  font-style: italic;
+  width: 30%;
+  height: 30%;
+  /* align-items: center;
+  font-style: italic; */
+} 
+
+.explanation {
+  padding-left: 20px;
+  width: 30%;
+  height: 30%;
+  /* align-items: center;
+  font-style: italic; */
+} 
+
+.definition {
+  padding-left: 20px;
+  width: 30%;
+  height: 30%;
+  /* align-items: center;
+  font-style: italic; */
 } 
 
 .foot-container {
