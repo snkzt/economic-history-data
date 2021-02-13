@@ -15,6 +15,7 @@
 }
 
 #home {
+  display: flex;
   font-family: 'Bradley Hand', cursive;
   font-style: italic;
   color:white;

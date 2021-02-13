@@ -15,6 +15,7 @@
 }
 
 #home {
+  display: flex;
   font-family: 'Bradley Hand', cursive;
   font-style: italic;
   color:white;
@@ -30,41 +31,44 @@
   color: gray;
 }
 
-.main {
+.container-fluid {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  padding: 3%;
+}
+
+.charts {
+  flex-basis: 500px;
+  align-items: center;
+  justify-content: center;
 }
 
 .slider-class {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
   align-items: center;
+  justify-content: center;
+  padding-top: 5%;
+  width: 50%;
+  height: 10%;
   font-size: 25px;
 }
 
-.ys-label {
-  display: flex;
-}
-
 .slider {
-  display: flex;
-  margin: 10px 0px 10px 0px;
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
   outline: none;
   height: 15px;
-  width: 500px;
+  width: 80%;
   background: #c8c8c8;
   border-radius: 10px;
   border: solid 4px #eeeeee;
 }
 
 ::-webkit-slider-thumb {
-  display: flex;
   -webkit-appearance:none;
   background:rgb(163, 163, 163);
   height:30px;
@@ -73,22 +77,20 @@
   border: 5px solid #ffffff;
 }
 
-.ys-indication {
-  display: flex;
+#series_chart_div {
+  width: 80%;
+  height: 50%; 
+  align-items: center;
+  justify-content: center;
 }
 
 #piechart {
-  display: flex;
-  width: 900px;
-  height: 500px;
-  padding-left: 8%;
-}
-
-#series_chart_div {
-  display: flex;
-  width: 900px;
-  height: 500px;
-}
+  width: 80%;
+  height: 50%;  
+  padding-left: 15%;
+  align-items: center;
+  justify-content: center;
+} 
 
 .foot-container {
   display: flex;
