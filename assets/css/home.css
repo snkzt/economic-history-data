@@ -27,39 +27,43 @@
   text-decoration: underline;
 }
 
-.container-fluid {
+.container-fluids {
   display: flex;
-  flex-basis: 500px;
   justify-content: center;
   align-items: center;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin: 2%;
   padding: 5%;
   background-color: antiquewhite;
 }
 
+.flex-item {
+  display: flex;
+  flex-basis: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
-  padding-left: 20px;
-  width: 30%;
-  height: 30%;
-  /* align-items: center;
-  font-style: italic; */
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-style: italic;
 } 
 
 .explanation {
+  width: 100%;
+  height: 100%;
   padding-left: 20px;
-  width: 30%;
-  height: 30%;
-  /* align-items: center;
-  font-style: italic; */
+  align-items: center;
+  font-style: italic;
 } 
 
 .definition {
+  width: 100%;
+  height: 100%;
   padding-left: 20px;
-  width: 30%;
-  height: 30%;
-  /* align-items: center;
-  font-style: italic; */
+  align-items: center;
+  font-style: italic;
 } 
 
 .foot-container {
