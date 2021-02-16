@@ -2,55 +2,22 @@ let datasetGdp = [];
 let datasetDomesticCredit = [];
 let datasetPopulation = [];
 let year;
-let byYearBraGdp;
-let byYearChnGdp;
-let byYearCypGdp;
-let byYearDeuGdp;
-let byYearGbrGdp;
-let byYearHkgGdp;
-let byYearIndGdp;
-let byYearJpnGdp;
-let byYearRusGdp;
-let byYearSgpGdp;
-let byYearThaGdp;
-let byYearUsaGdp;
-let byYearZafGdp;
-let byYearBraDc;
-let byYearChnDc;
-let byYearCypDc;
-let byYearDeuDc;
-let byYearGbrDc;
-let byYearHkgDc;
-let byYearIndDc;
-let byYearJpnDc;
-let byYearRusDc;
-let byYearSgpDc;
-let byYearThaDc;
-let byYearUsaDc;
-let byYearZafDc;
-let byYearBraPl;
-let byYearChnPl;
-let byYearCypPl;
-let byYearDeuPl;
-let byYearGbrPl;
-let byYearHkgPl;
-let byYearIndPl;
-let byYearJpnPl;
-let byYearRusPl;
-let byYearSgpPl;
-let byYearThaPl;
-let byYearUsaPl;
-let byYearZafPl;
 let dataBubble;
 let dataPie;
+const yearSelector = document.getElementById('year-slider');
+const spanValue = document.getElementById('current-value');
+yearSelector.addEventListener('input', sliderInput);
+const [bra, chn, cyp, deu, gbr, hkg, ind, jpn, rus, sgp, tha, usa, zaf] = Array(13).fill(null).map(() => {
+  return {
+    gdp: [0],
+    dc: [0],
+    pl: [0],
+  }
+});
 expGdp();
 expDc();
 expPl();
 yearDefault();
-
-const yearSelector = document.getElementById('year-slider');
-const spanValue = document.getElementById('current-value');
-yearSelector.addEventListener('input', sliderInput);
 
 // GDP data with API and take out each countries' data
 async function expGdp() {
@@ -95,204 +62,204 @@ const returnValue = (item) => {
 }
 
 function countryGdpbyYear() {
-  const byCountryBraDcGdp = datasetGdp.filter(item => {
+  const byCountryBraGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
-  byYearBraGdp = byCountryBraDcGdp.filter(filterByYear).map(returnValue);
+  bra.gdp = byCountryBraGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryChnDcGdp = datasetGdp.filter(item => {
+  const byCountryChnGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'CHN');
   });
-  byYearChnGdp = byCountryChnDcGdp.filter(filterByYear).map(returnValue);
+  chn.gdp = byCountryChnGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryCypDcGdp = datasetGdp.filter(item => {
+  const byCountryCypGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'CYP');
   });
-  byYearCypGdp = byCountryCypDcGdp.filter(filterByYear).map(returnValue);
+  cyp.gdp = byCountryCypGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryDeuDcGdp = datasetGdp.filter(item => {
+  const byCountryDeuGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'DEU');
   });
-  byYearDeuGdp = byCountryDeuDcGdp.filter(filterByYear).map(returnValue);
+  deu.gdp = byCountryDeuGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryGbrDcGdp = datasetGdp.filter(item => {
+  const byCountryGbrGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'GBR');
   });
-  byYearGbrGdp = byCountryGbrDcGdp.filter(filterByYear).map(returnValue);
+  gbr.gdp = byCountryGbrGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryHkgDcGdp = datasetGdp.filter(item => {
+  const byCountryHkgGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'HKG');
   });
-  byYearHkgGdp = byCountryHkgDcGdp.filter(filterByYear).map(returnValue);
+  hkg.gdp = byCountryHkgGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryIndDcGdp = datasetGdp.filter(item => {
+  const byCountryIndGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'IND');
   });
-  byYearIndGdp = byCountryIndDcGdp.filter(filterByYear).map(returnValue);
+  ind.gdp = byCountryIndGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryJpnDcGdp = datasetGdp.filter(item => {
+  const byCountryJpnGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'JPN');
   });
-  byYearJpnGdp = byCountryJpnDcGdp.filter(filterByYear).map(returnValue);
+  jpn.gdp = byCountryJpnGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryRusDcGdp = datasetGdp.filter(item => {
+  const byCountryRusGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'RUS');
   });
-  byYearRusGdp = byCountryRusDcGdp.filter(filterByYear).map(returnValue);
+  rus.gdp = byCountryRusGdp.filter(filterByYear).map(returnValue);
 
-  const byCountrySgpDcGdp = datasetGdp.filter(item => {
+  const byCountrySgpGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'SGP');
   });
-  byYearSgpGdp = byCountrySgpDcGdp.filter(filterByYear).map(returnValue);
+  sgp.gdp = byCountrySgpGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryThaDcGdp = datasetGdp.filter(item => {
+  const byCountryThaGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'THA');
   });
-  byYearThaGdp = byCountryThaDcGdp.filter(filterByYear).map(returnValue);
+  tha.gdp = byCountryThaGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryUsaDcGdp = datasetGdp.filter(item => {
+  const byCountryUsaGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'USA');
   });
-  byYearUsaGdp = byCountryUsaDcGdp.filter(filterByYear).map(returnValue);
+  usa.gdp = byCountryUsaGdp.filter(filterByYear).map(returnValue);
 
-  const byCountryZafDcGdp = datasetGdp.filter(item => {
+  const byCountryZafGdp = datasetGdp.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
-  byYearZafGdp = byCountryZafDcGdp.filter(filterByYear).map(returnValue);
+  zaf.gdp = byCountryZafGdp.filter(filterByYear).map(returnValue);
 }
 
 function countryDcbyYear() {
   const byCountryBraDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
-  byYearBraDc = byCountryBraDc.filter(filterByYear).map(returnValue);
+  bra.dc = byCountryBraDc.filter(filterByYear).map(returnValue);
 
   const byCountryChnDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'CHN');
   });
-  byYearChnDc = byCountryChnDc.filter(filterByYear).map(returnValue);
+  chn.dc = byCountryChnDc.filter(filterByYear).map(returnValue);
 
   const byCountryCypDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'CYP');
   });
-  byYearCypDc = byCountryCypDc.filter(filterByYear).map(returnValue);
+  cyp.dc = byCountryCypDc.filter(filterByYear).map(returnValue);
 
   const byCountryDeuDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'DEU');
   });
-  byYearDeuDc = byCountryDeuDc.filter(filterByYear).map(returnValue);
+  deu.dc = byCountryDeuDc.filter(filterByYear).map(returnValue);
 
   const byCountryGbrDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'GBR');
   });
-  byYearGbrDc = byCountryGbrDc.filter(filterByYear).map(returnValue);
+  gbr.dc = byCountryGbrDc.filter(filterByYear).map(returnValue);
 
   const byCountryHkgDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'HKG');
   });
-  byYearHkgDc = byCountryHkgDc.filter(filterByYear).map(returnValue);
+  hkg.dc = byCountryHkgDc.filter(filterByYear).map(returnValue);
 
   const byCountryIndDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'IND');
   });
-  byYearIndDc = byCountryIndDc.filter(filterByYear).map(returnValue);
+  ind.dc = byCountryIndDc.filter(filterByYear).map(returnValue);
 
   const byCountryJpnDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'JPN');
   });
-  byYearJpnDc = byCountryJpnDc.filter(filterByYear).map(returnValue);
+  jpn.dc = byCountryJpnDc.filter(filterByYear).map(returnValue);
 
   const byCountryRusDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'RUS');
   });
-  byYearRusDc = byCountryRusDc.filter(filterByYear).map(returnValue);
+  rus.dc = byCountryRusDc.filter(filterByYear).map(returnValue);
 
   const byCountrySgpDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'SGP');
   });
-  byYearSgpDc = byCountrySgpDc.filter(filterByYear).map(returnValue);
+  sgp.dc = byCountrySgpDc.filter(filterByYear).map(returnValue);
 
   const byCountryThaDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'THA');
   });
-  byYearThaDc = byCountryThaDc.filter(filterByYear).map(returnValue);
+  tha.dc = byCountryThaDc.filter(filterByYear).map(returnValue);
 
   const byCountryUsaDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'USA');
   });
-  byYearUsaDc = byCountryUsaDc.filter(filterByYear).map(returnValue);
+  usa.dc = byCountryUsaDc.filter(filterByYear).map(returnValue);
 
   const byCountryZafDc = datasetDomesticCredit.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
-  byYearZafDc = byCountryZafDc.filter(filterByYear).map(returnValue);
+  zaf.dc = byCountryZafDc.filter(filterByYear).map(returnValue);
 }
 
 function countryPlbyYear() {
   const byCountryBraPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'BRA');
   });
-  byYearBraPl = byCountryBraPl.filter(filterByYear).map(returnValue);
+  bra.pl = byCountryBraPl.filter(filterByYear).map(returnValue);
 
   const byCountryChnPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'CHN');
   });
-  byYearChnPl = byCountryChnPl.filter(filterByYear).map(returnValue);
+  chn.pl = byCountryChnPl.filter(filterByYear).map(returnValue);
 
   const byCountryCypPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'CYP');
   });
-  byYearCypPl = byCountryCypPl.filter(filterByYear).map(returnValue);
+  cyp.pl = byCountryCypPl.filter(filterByYear).map(returnValue);
 
   const byCountryDeuPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'DEU');
   });
-  byYearDeuPl = byCountryDeuPl.filter(filterByYear).map(returnValue);
+  deu.pl = byCountryDeuPl.filter(filterByYear).map(returnValue);
 
   const byCountryGbrPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'GBR');
   });
-  byYearGbrPl = byCountryGbrPl.filter(filterByYear).map(returnValue);
+  gbr.pl = byCountryGbrPl.filter(filterByYear).map(returnValue);
 
   const byCountryHkgPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'HKG');
   });
-  byYearHkgPl = byCountryHkgPl.filter(filterByYear).map(returnValue);
+  hkg.pl = byCountryHkgPl.filter(filterByYear).map(returnValue);
 
   const byCountryIndPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'IND');
   });
-  byYearIndPl = byCountryIndPl.filter(filterByYear).map(returnValue);
+  ind.pl = byCountryIndPl.filter(filterByYear).map(returnValue);
 
   const byCountryJpnPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'JPN');
   });
-  byYearJpnPl = byCountryJpnPl.filter(filterByYear).map(returnValue);
+  jpn.pl = byCountryJpnPl.filter(filterByYear).map(returnValue);
 
   const byCountryRusPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'RUS');
   });
-  byYearRusPl = byCountryRusPl.filter(filterByYear).map(returnValue);
+  rus.pl = byCountryRusPl.filter(filterByYear).map(returnValue);
 
   const byCountrySgpPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'SGP');
   });
-  byYearSgpPl = byCountrySgpPl.filter(filterByYear).map(returnValue);
+  sgp.pl = byCountrySgpPl.filter(filterByYear).map(returnValue);
 
   const byCountryThaPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'THA');
   });
-  byYearThaPl = byCountryThaPl.filter(filterByYear).map(returnValue);
+  tha.pl = byCountryThaPl.filter(filterByYear).map(returnValue);
 
   const byCountryUsaPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'USA');
   });
-  byYearUsaPl = byCountryUsaPl.filter(filterByYear).map(returnValue);
+  usa.pl = byCountryUsaPl.filter(filterByYear).map(returnValue);
 
   const byCountryZafPl = datasetPopulation.filter(item => {
     return filterByCountryCode(item,'ZAF');
   });
-  byYearZafPl = byCountryZafPl.filter(filterByYear).map(returnValue);
+  zaf.pl = byCountryZafPl.filter(filterByYear).map(returnValue);
 }
 
 function selectedYear() {
@@ -315,8 +282,8 @@ function filterByYear(item) {
   }         
 }
 
-function pieCal(yearGdp, yearDc, yearPl) {
-  return Math.round((yearGdp*(yearDc/100))/yearPl);
+function pieCal(gdp, dc, pl) {
+  return Math.round((gdp*(dc/100))/pl);
 }
 
 function drawChart(chart) {
@@ -327,31 +294,31 @@ function drawChart(chart) {
 function chartDrawBubble() {
   dataBubble = google.visualization.arrayToDataTable([
     ['ID', 'GDP($)', 'Domestic Private Credit (% of GDP)', 'Country', 'Population'],
-    ['BRA', byYearBraGdp[0], byYearBraDc[0], 'Brasil', byYearBraPl[0]],
-    ['CHN', byYearChnGdp[0], byYearChnDc[0], 'China', byYearChnPl[0]],
-    ['CYP', byYearCypGdp[0], byYearCypDc[0], 'Cyprus', byYearCypPl[0]],
-    ['DEU', byYearDeuGdp[0], byYearDeuDc[0], 'Germany', byYearDeuPl[0]],
-    ['GBR', byYearGbrGdp[0], byYearGbrDc[0], 'United Kingdom', byYearGbrPl[0]],
-    ['HKG', byYearHkgGdp[0], byYearHkgDc[0], 'Hong Kong', byYearHkgPl[0]],
-    ['IND', byYearIndGdp[0], byYearIndDc[0], 'India', byYearIndPl[0]],
-    ['JPN', byYearJpnGdp[0], byYearJpnDc[0], 'Japan', byYearJpnPl[0]],
-    ['RUS', byYearRusGdp[0], byYearRusDc[0], 'Russia', byYearRusPl[0]],
-    ['SGP', byYearSgpGdp[0], byYearSgpDc[0], 'Singapore', byYearSgpPl[0]],
-    ['THA', byYearThaGdp[0], byYearThaDc[0], 'Thailand', byYearThaPl[0]],
-    ['USA', byYearUsaGdp[0], byYearUsaDc[0], 'United States', byYearUsaPl[0]],
-    ['ZAF', byYearZafGdp[0], byYearZafDc[0], 'South Africa', byYearZafPl[0]]
+    ['BRA', bra.gdp[0], bra.dc[0], 'Brasil', bra.pl[0]],
+    ['CHN', chn.gdp[0], chn.dc[0], 'China', chn.pl[0]],
+    ['CYP', cyp.gdp[0], cyp.dc[0], 'Cyprus', cyp.pl[0]],
+    ['DEU', deu.gdp[0], deu.dc[0], 'Germany', deu.pl[0]],
+    ['GBR', gbr.gdp[0], gbr.dc[0], 'United Kingdom', gbr.pl[0]],
+    ['HKG', hkg.gdp[0], hkg.dc[0], 'Hong Kong', hkg.pl[0]],
+    ['IND', ind.gdp[0], ind.dc[0], 'India', ind.pl[0]],
+    ['JPN', jpn.gdp[0], jpn.dc[0], 'Japan', jpn.pl[0]],
+    ['RUS', rus.gdp[0], rus.dc[0], 'Russia', rus.pl[0]],
+    ['SGP', sgp.gdp[0], sgp.dc[0], 'Singapore', sgp.pl[0]],
+    ['THA', tha.gdp[0], tha.dc[0], 'Thailand', tha.pl[0]],
+    ['USA', usa.gdp[0], usa.dc[0], 'United States', usa.pl[0]],
+    ['ZAF', zaf.gdp[0], zaf.dc[0], 'South Africa', zaf.pl[0]]
   ]);
   const optionsBubble = {
-  title: `Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries`, fontSize: 18,
-  hAxis: {title: 'GDP ($)'},
-  vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
-  bubble: {
-    textStyle: {
-      fontSize: 11,
-      color: 'white',
-      auraColor: 'none'
+    title: `Correlation between GDP, Domestic Private Credit to GDP and population of world 13 countries`, fontSize: 18,
+    hAxis: {title: 'GDP ($)'},
+    vAxis: {title: 'Domestic Private Credit (% Of GDP)'},
+    bubble: {
+      textStyle: {
+        fontSize: 11,
+        color: 'white',
+        auraColor: 'none'
+      }
     }
-  }
   }
   const chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
   chart.draw(dataBubble, optionsBubble);
@@ -360,19 +327,19 @@ function chartDrawBubble() {
 function chartDrawPie() {
   dataPie = google.visualization.arrayToDataTable([
     ['Country', 'Average amount of Domestic Private Credit($)'],
-    ['Brasil', pieCal(byYearBraGdp, byYearBraDc, byYearBraPl)],
-    ['China', pieCal(byYearChnGdp, byYearChnDc, byYearChnPl)],
-    ['Cyprus', pieCal(byYearCypGdp, byYearCypDc, byYearCypPl)],
-    ['Germany', pieCal(byYearDeuGdp, byYearDeuDc, byYearDeuPl)],
-    ['United Kingdom', pieCal(byYearGbrGdp, byYearGbrDc, byYearGbrPl)],
-    ['Hong Kong', pieCal(byYearHkgGdp, byYearHkgDc, byYearHkgPl)],
-    ['India',pieCal(byYearIndGdp, byYearIndDc, byYearIndPl)],
-    ['Japan', pieCal(byYearJpnGdp, byYearJpnDc, byYearJpnPl)],
-    ['Russia', pieCal(byYearRusGdp, byYearRusDc, byYearRusPl)],
-    ['Singapore',pieCal(byYearSgpGdp, byYearSgpDc, byYearSgpPl)],
-    ['Thailand', pieCal(byYearThaGdp, byYearThaDc, byYearThaPl)],
-    ['United States', pieCal(byYearUsaGdp, byYearUsaDc, byYearUsaPl)],
-    ['South Africa', pieCal(byYearZafGdp, byYearZafDc, byYearZafPl)]
+    ['Brasil', pieCal(bra.gdp, bra.dc, bra.pl)],
+    ['China', pieCal(chn.gdp, chn.dc, chn.pl)],
+    ['Cyprus', pieCal(cyp.gdp, cyp.dc, cyp.pl)],
+    ['Germany', pieCal(deu.gdp, deu.dc, deu.pl)],
+    ['United Kingdom', pieCal(gbr.gdp, gbr.dc, gbr.pl)],
+    ['Hong Kong', pieCal(hkg.gdp, hkg.dc, hkg.pl)],
+    ['India',pieCal(ind.gdp, ind.dc, ind.pl)],
+    ['Japan', pieCal(jpn.gdp, jpn.dc, jpn.pl)],
+    ['Russia', pieCal(rus.gdp, rus.dc, rus.pl)],
+    ['Singapore',pieCal(sgp.gdp, sgp.dc, sgp.pl)],
+    ['Thailand', pieCal(tha.gdp, tha.dc, tha.pl)],
+    ['United States', pieCal(usa.gdp, usa.dc, usa.pl)],
+    ['South Africa', pieCal(zaf.gdp, zaf.dc, zaf.pl)]
   ]);
   const optionsPie = {
     title: `Average amount of Domestic Private Credit($) to GDP($) per person in 13 countries`, fontSize: 15,
