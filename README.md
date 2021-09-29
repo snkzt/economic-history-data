@@ -16,7 +16,7 @@ There are 3 sections in this web site
   - Chart / Year : By clicking Chart send visitor to Year page, and by clicking Year button let visitors to chose year showed on the chart.
 
 ### Built With
-HTML, CSS, Java Script
+JavaScript, HTML, CSS
 
 ### Author
 Saki Nakazato
