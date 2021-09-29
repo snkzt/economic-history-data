@@ -10,7 +10,7 @@ https://secure-brook-19083.herokuapp.com/
 
 ## Description
 ### How to Use
-There are 3 buttons
+There are 3 sections in this web site
   - Is the worlds Economically Stable? : Home button to explains the aim of the web page
   - How to Use : Explaination page how to use 
   - Chart / Year : By clicking Chart send visitor to Year page, and by clicking Year button let visitors to chose year showed on the chart.
