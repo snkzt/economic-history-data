@@ -19,4 +19,4 @@ There are 3 sections in this web site
 JavaScript, HTML, CSS
 
 ### Author
-Saki Nakazato
+snkzt
